@@ -1,4 +1,5 @@
 var bg, flakeImg, flake;
+snowflakes = []
 const Engine = Matter.Engine;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
@@ -18,7 +19,7 @@ function setup() {
 	engine = Engine.create();
 	world = engine.world;
 
-  flake = new Flake(50,50)
+
 	
 
 
@@ -30,8 +31,14 @@ function setup() {
 function draw() {
  Engine.update(engine);	
   background(bg);  
+  if (frameCount%10==0 && snowflakes.length<100){
+    snowflakes.push(new Flake(Math.round(random(50,750)),50))
+  }
   
-  flake.display();
+  for (var i=0;i<snowflakes.length;i++){
+    snowflakes[i].display();
+  }
+
  
 
 

@@ -3,7 +3,8 @@ class Flake {
         var options = {
             restitution: 1,
             friction: 0,
-            density:100
+            density:100,
+            timeScale: 0.1
         }
         this.r = 10;
 
